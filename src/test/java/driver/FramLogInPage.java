@@ -7,7 +7,7 @@ public class FramLogInPage {
 	
 	DriverInstall system;
 	public FramLogInPage(DriverInstall system) {
-		this.system = system ;
+		this.system = system;
 	}
 	public WebElement ifram() {
 		WebElement ifrm = system.getDriver().findElement(By.id("firstFr"));
@@ -28,6 +28,18 @@ public class FramLogInPage {
 		WebElement wname = system.getDriver().findElement(By.name("fname"));
 		return wname;
 
+	}
+	
+	public WebElement infram() {
+		WebElement infrm = system.getDriver().findElement(By.xpath("//iframe[@src='innerframe']"));
+		return infrm;
+
+	}
+	
+	public WebElement secondFramkey() {
+		WebElement sframkey = system.getDriver().findElement(By.name("email"));
+		return sframkey;
+		
 	}
 
 }

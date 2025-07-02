@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="21.837" tests="2" skipped="0" failures="0" errors="0">
-<testcase classname="Handling Frames in Web Applications" name="Switch to a frame and interact with elements" time="6.617">
+<testsuite name="Cucumber" time="32.082" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Handling Frames in Web Applications" name="Switch to a frame and interact with elements" time="12.329">
 <system-out><![CDATA[
 When User Switch to the frame...............................................passed
 And User ender "Hariprasath"................................................passed
@@ -8,10 +8,18 @@ And User Enter "T"..........................................................pass
 Then User switch back to the default content................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Handling Frames in Web Applications" name="Without Switch to a frame and interact with elements" time="14.974">
+<testcase classname="Handling Frames in Web Applications" name="Without Switch to a frame and interact with elements" time="14.367">
 <system-out><![CDATA[
 When User Enter frame "Hariprasath".........................................passed
-But User should receive error message.......................................passed
+But User send messege "unable to ender frams" user switch to frams..........passed
+]]></system-out>
+</testcase>
+<testcase classname="Handling Frames in Web Applications" name="Handle nested frames" time="5.101">
+<system-out><![CDATA[
+When User switch to the outer frame.........................................passed
+And User switch to the inner frame..........................................passed
+And I enter "Example@gmail.com" into the input field........................passed
+Then send message "User entered successfully in nested fram" in sysout......passed
 ]]></system-out>
 </testcase>
 </testsuite>

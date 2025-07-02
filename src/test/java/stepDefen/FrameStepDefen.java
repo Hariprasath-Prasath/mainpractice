@@ -50,21 +50,38 @@ import io.cucumber.java.en.When;
 				System.out.println("Exceptio handiled");
 			}
 
-	
 		}
-	
-		@When("User should receive error message")
-		public void userShouldReceiveErrorMessage() {
-			
-	
+
+		@When("User send messege {string} user switch to frams")
+		public void userSendMessegeUserSwitchToFrams(String errMeg) {
+		    	System.out.println(errMeg);
+		   
 		}
-	
-	
-	
-	
-	
-	
-	
-	
+
+		@When("User switch to the outer frame")
+		public void userSwitchToTheOuterFrame() {
+			FramLogInPage FLP = new FramLogInPage(system);
+			WebElement ifm = FLP.ifram();
+			system.getDriver().switchTo().frame(ifm);
+		   
+		}
+		@When("User switch to the inner frame")
+		public void userSwitchToTheInnerFrame() {
+			FramLogInPage FLP = new FramLogInPage(system);
+			WebElement infrm = FLP.infram();
+			system.getDriver().switchTo().frame(infrm);
+		   
+		}
+		@When("I enter {string} into the input field")
+		public void iEnterIntoTheInputField(String mail) {
+			FramLogInPage FLP = new FramLogInPage(system);
+			FLP.secondFramkey().sendKeys(mail);
+		   
+		}
+		@Then("send message {string} in sysout")
+		public void sendMessageInSysout(String key) {
+		    System.out.println(key);
+		   
+		}
 	
 	}

@@ -1,7 +1,12 @@
 package hooks.corg;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -35,6 +40,15 @@ public class Hooks {
 	public void after(Scenario Scenario) {
 		Status status = Scenario.getStatus();
 		System.out.println("Status : "+status);
+		TakesScreenshot ts = (TakesScreenshot)system.getDriver();
+		File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
+		File f = new File("D:\\Seliniam\\Practish\\Selenium\\CsreenShot\\hook.png");
+		try {
+			FileUtils.copyFile(screenshotAs, f);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		system.getDriver().quit();
 
 	}

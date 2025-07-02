@@ -30,6 +30,11 @@
     <artifactId>cucumber-picocontainer</artifactId>
     <version>7.23.0</version>
 </dependency>
-  
+
+  	<dependency>
+  		<groupId>org.Pom</groupId>
+  		<artifactId>PomPage</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>
